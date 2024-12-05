@@ -10,7 +10,7 @@ class GetInTouch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 700,
-      width: 700,
+      width: 1700,
       color: Colors.yellow,
     );
   }

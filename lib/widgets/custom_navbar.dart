@@ -19,11 +19,11 @@ class CustomNavbar extends StatefulWidget {
   State<CustomNavbar> createState() => _CustomNavbarState();
 }
 
-final section1Key = new GlobalKey();
-final section2Key = new GlobalKey();
-final section3Key = new GlobalKey();
-final section4Key = new GlobalKey();
-final section5Key = new GlobalKey();
+final section1Key = GlobalKey();
+final section2Key = GlobalKey();
+final section3Key = GlobalKey();
+final section4Key = GlobalKey();
+final section5Key = GlobalKey();
 final List<GlobalKey> targetkeys = [
   section1Key,
   section2Key,
@@ -35,7 +35,7 @@ final List<GlobalKey> targetkeys = [
 class _CustomNavbarState extends State<CustomNavbar> {
   void scrollToSection(GlobalKey key) {
     Scrollable.ensureVisible(key.currentContext!,
-        duration: Duration(seconds: 1), curve: Curves.easeInOut);
+        duration: const Duration(seconds: 1), curve: Curves.easeInOut);
   }
 
   @override

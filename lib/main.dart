@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testapp/screens/case_study.dart';
 import 'package:testapp/screens/get_in_touch.dart';
 import 'package:testapp/screens/homepage.dart';
 import 'package:testapp/screens/recent_wrok.dart';
-
 import 'screens/Testimonials.dart';
 
 void main() {
@@ -27,7 +25,7 @@ class Portfolio extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: Homepage.routeName,
         routes: {
-          Homepage.routeName: (context) => const Homepage(),
+          Homepage.routeName: (context) => Homepage(),
           CaseStudy.routeName: (context) => const CaseStudy(),
           RecentWrok.routeName: (context) => const RecentWrok(),
           Testimonials.routeName: (context) => const Testimonials(),

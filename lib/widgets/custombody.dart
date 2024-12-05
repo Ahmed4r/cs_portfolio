@@ -1,13 +1,19 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testapp/appColors.dart';
 
+class CustomBody extends StatelessWidget {
+  final String name;
+  final String imagePath;
+  final String description;
 
-class Custombody extends StatelessWidget {
-  String Name;
-  Custombody({super.key, required this.Name});
+  const CustomBody({
+    Key? key,
+    required this.name,
+    required this.description,
+    required this.imagePath,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +25,25 @@ class Custombody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 600.h),
-            Text(Name,
-                style: GoogleFonts.raleway(
-                    fontSize: ScreenUtil().setSp(50),
-                    color: Appcolors.whiteColor,
-                    fontWeight: FontWeight.bold)),
+
             Text(
-                'Intro text: Lorem ipsum dolor sit amet, consectetur\n adipiscing elit, sed do eiusmod tempor incididunt ut\n labore et dolore magna aliqua. ',
-                style: GoogleFonts.ibmPlexMono(
-                    fontSize: 16.sp, color: const Color(0xff9C9C9C))),
-            SizedBox(
-              height: 40.h,
+              name,
+              style: GoogleFonts.raleway(
+                fontSize: ScreenUtil().setSp(50),
+                color: Appcolors.whiteColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            // Description Text
+            Text(
+              description,
+              style: GoogleFonts.ibmPlexMono(
+                fontSize: 16.sp,
+                color: const Color(0xff9C9C9C),
+              ),
+            ),
+            SizedBox(height: 40.h),
+
             Container(
               height: 400.h,
               width: 340.w,
@@ -42,21 +55,36 @@ class Custombody extends StatelessWidget {
                 child: InkWell(
                   onTap: () {},
                   child: Text(
-                    "Let's Get Started > ",
+                    "Let's Get Started >",
                     style: GoogleFonts.ibmPlexMono(
-                        color: Appcolors.whiteColor, fontSize: 16.sp),
+                      color: Appcolors.whiteColor,
+                      fontSize: 16.sp,
+                    ),
                   ),
                 ),
               ),
             ),
           ],
         ),
-        CircleAvatar(
-          radius: 800.r,
-          backgroundImage: const NetworkImage(
-              'https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png'),
+        // Profile Image
+        Transform.translate(
+          offset: Offset(0, 360.h),
+          child: CircleAvatar(
+            radius: 800.r,
+            backgroundImage: _getImage(),
+          ),
         )
       ],
     );
+  }
+
+  // Fallback for the image in case of error
+  ImageProvider _getImage() {
+    try {
+      return AssetImage(imagePath);
+    } catch (e) {
+      return const AssetImage(
+          'assets/default-placeholder.png'); // Add a default placeholder asset
+    }
   }
 }
