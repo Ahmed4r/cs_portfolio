@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
               linkedinLink:
                   'https://www.linkedin.com/in/ahmed-hegazy-9ba768252',
             ),
-            CustomBody(
+            const CustomBody(
               description: 'Flutter Developer',
               name: "Name",
               imagePath: 'assets/image.jpeg',

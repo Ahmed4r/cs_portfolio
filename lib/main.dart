@@ -25,7 +25,7 @@ class Portfolio extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: Homepage.routeName,
         routes: {
-          Homepage.routeName: (context) => Homepage(),
+          Homepage.routeName: (context) => const Homepage(),
           CaseStudy.routeName: (context) => const CaseStudy(),
           RecentWrok.routeName: (context) => const RecentWrok(),
           Testimonials.routeName: (context) => const Testimonials(),

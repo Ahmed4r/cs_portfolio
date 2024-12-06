@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:testapp/appColors.dart';
 
-
-
 import 'package:url_launcher/url_launcher_string.dart';
 
 class CustomNavbar extends StatefulWidget {

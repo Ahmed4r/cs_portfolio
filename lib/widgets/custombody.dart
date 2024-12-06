@@ -9,11 +9,11 @@ class CustomBody extends StatelessWidget {
   final String description;
 
   const CustomBody({
-    Key? key,
+    super.key,
     required this.name,
     required this.description,
     required this.imagePath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
